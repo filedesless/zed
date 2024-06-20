@@ -1259,7 +1259,7 @@ extern "C" fn handle_key_event(this: &Object, native_event: id, key_equivalent: 
                 }
             }
 
-            if !handled {
+            if !handled && !(text == "∫" || text == "ƒ" || text == "∂") {
                 handled = true;
                 send_to_input_handler(this, ImeInput::InsertText(text, range));
             }
